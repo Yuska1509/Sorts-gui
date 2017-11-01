@@ -6,6 +6,9 @@ import javax.swing.event.DocumentListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * @author Yulia
+ */
 public class SortsForm {
     private JButton button1;
     private JProgressBar progressBar1;
@@ -17,8 +20,8 @@ public class SortsForm {
     String result = "";
 
     /**
-     *
-     * @param list list
+     * testing sorts
+     * @param list list that we sort
      */
     public void maintestspeed(int[] list) {
         Tester[] algs = new Tester[]{
@@ -64,7 +67,7 @@ public class SortsForm {
             }
         });
 
-        button1.addActionListener(new ActionListener() {
+        button1.addActionListener(new ActionListener() { // start button
             @Override
             public void actionPerformed(ActionEvent e) {
                 progressBar1.setValue(0);
@@ -72,10 +75,10 @@ public class SortsForm {
                 progressBar1.setMaximum(100);
                 barValue = 0;
                 result = "";
-                Thread one = new Thread(() -> {
+                Thread one = new Thread(() -> { // main thread
                     try {
                         while (barValue < 100) {
-                            try {
+                            try { // if you put an integer
                                 if (Integer.parseInt(mainTextField.getText()) > 0) {
                                     Integer length = Integer.parseInt(mainTextField.getText());
                                     Integer range = 10000;
@@ -84,13 +87,13 @@ public class SortsForm {
                                     infoLabelText = "Creating array";
                                     int[] list = InputPrint.getRandomArray(length, range);
                                     maintestspeed(list);
-                                } else {
+                                } else { // you put a negative number
                                     infoLabelText = "Error";
                                     barValue = 100;
                                     result = "Error";
 
                                 }
-                            } catch (Exception ex) {
+                            } catch (Exception ex) { // yuo put not integer
                                 infoLabelText = "Error";
                                 barValue = 100;
                                 result = "Error";
@@ -104,7 +107,7 @@ public class SortsForm {
                     }
                 });
                 one.start();
-                Thread two = new Thread(() -> {
+                Thread two = new Thread(() -> { // updating progressbar and textfield
                     try {
                         while (barValue <= 100) {
                             infoLabel.setText(infoLabelText);
@@ -121,7 +124,7 @@ public class SortsForm {
     }
 
     /**
-     *
+     * creating JFrame
      * @param args args
      */
     public static void main(String[] args) {
