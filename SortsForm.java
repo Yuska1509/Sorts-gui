@@ -16,6 +16,10 @@ public class SortsForm {
     String infoLabelText = "";
     String result = "";
 
+    /**
+     *
+     * @param list list
+     */
     public void maintestspeed(int[] list) {
         Tester[] algs = new Tester[]{
                 new Tester(new Sort.Comb(), "Yulia.combSort"),
@@ -38,6 +42,9 @@ public class SortsForm {
         }
     }
 
+    /**
+     *
+     */
     public SortsForm() {
         mainTextField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
@@ -80,11 +87,13 @@ public class SortsForm {
                                 } else {
                                     infoLabelText = "Error";
                                     barValue = 100;
+                                    result = "Error";
 
                                 }
                             } catch (Exception ex) {
                                 infoLabelText = "Error";
                                 barValue = 100;
+                                result = "Error";
                             }
                             Thread.sleep(1);
                             JOptionPane.showMessageDialog(null, result, "Result",
@@ -111,7 +120,10 @@ public class SortsForm {
         });
     }
 
-
+    /**
+     *
+     * @param args args
+     */
     public static void main(String[] args) {
         JFrame frame = new JFrame();
         frame.setContentPane(new SortsForm().mainPanel1);
