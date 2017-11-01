@@ -25,11 +25,16 @@ public class SortsForm {
      */
     public void maintestspeed(int[] list) {
         Tester[] algs = new Tester[]{
-                new Tester(new Sort.Comb(), "Yulia.combSort"),
-                new Tester(new Sort.Bubble(), "Yulia.bubbleSort"),
-                new Tester(new Sort.Gnome(), "Yulia.gnomeSort"),
-                new Tester(new Sort.Selection(), "Yulia.selectionSort") /*,
-                new Tester(new Sort.Stupid(), "Yulia.stupidsort") */
+                new Tester(new Sort.Comb(), "Yulia.CombSort"),
+                new Tester(new Sort.Insertion(), "Yulia.Insertionsort"),
+                new Tester(new Sort.Bubble(), "Yulia.BubbleSort"),
+                new Tester(new Sort.Gnome(), "Yulia.GnomeSort"),
+                new Tester(new Sort.Selection(), "Yulia.SelectionSort"),
+                new Tester(new ArtemsSorts.Bubble(), "Artem.BubbleSort"),
+                new Tester(new ArtemsSorts.Counting(), "Artem.CountingSort"),
+                new Tester(new ArtemsSorts.Selection(), "Artem.SelectionSort"),
+                new Tester(new ArtemsSorts.Comb(),"Artem.CombSort"),
+                new Tester(new ArtemsSorts.Insertion(),"Artem.InsertionSort")
         };
 
         for (Tester alg : algs) {
@@ -37,17 +42,12 @@ public class SortsForm {
             System.out.println(alg.name);
             infoLabelText = alg.name;
             alg.sort(toSort);
-            System.out.println(alg.name + "   " + String.valueOf(alg.time));
-            /* infoLabelText = alg.name + "   " + String.valueOf(alg.time); */
             result = result + alg.name + ":  " + String.valueOf(alg.time) + "\n";
             barValue += 100/(algs.length);
-            System.out.println(barValue);
         }
     }
 
-    /**
-     *
-     */
+
     public SortsForm() {
         mainTextField.getDocument().addDocumentListener(new DocumentListener() {
             @Override

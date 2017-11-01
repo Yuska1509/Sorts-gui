@@ -10,13 +10,6 @@ public class Sort {
     public static void main(String[] args) {
         Integer length = InputPrint.getInteger();
         int[] list = InputPrint.getList(length);
-        InputPrint.printArray(list);
-        /*
-        InputPrint.printArray(Gnome.sort(list));
-        InputPrint.printArray(Bubble.sort(list));
-        InputPrint.printArray(Selection.sort(list));
-        InputPrint.printArray(Comb.sort(list));
-        */
     }
 
     public static class Gnome implements Sorts {
@@ -38,6 +31,32 @@ public class Sort {
         @Override
         public String name(int[] list) {
             return "Yulia.GnomeSort";
+        }
+    }
+
+
+    public static class Insertion implements Sorts {
+        /**
+         * Array sort
+         * @param list int[] array
+         * @return sorted array
+         */
+        @Override
+        public int[] sort(int[] list) {
+            for (int i = 0; i < list.length; i++) {
+                Integer elem = list[i];
+                int j = i;
+                while (j > 0 && elem < list[j - 1]) {
+                    list[j] = list[j - 1];
+                    --j;
+                }
+                list[j] = elem;
+            }
+            return list;
+        }
+        @Override
+        public String name(int[] list) {
+            return "Yulia.InsertionSort";
         }
     }
 

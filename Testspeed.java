@@ -21,7 +21,7 @@ class Tester implements Sorts {
         list = alg.sort(list);
         long end = System.nanoTime();
         time = (end - start)/1000000000.0;
-        /* InputPrint.printArray(list); */
+        InputPrint.printArray(list);
         return list;
     }
 
@@ -40,7 +40,8 @@ public class Testspeed {
                 new Tester(new Sort.Comb(), "Yulia.combSort"),
                 new Tester(new Sort.Gnome(), "Yulia.gnomeSort"),
                 new Tester(new Sort.Selection(), "Yulia.selectionSort"),
-                new Tester(new Sort.Stupid(), "Yulia.stupidSort")
+                new Tester(new Sort.Stupid(), "Yulia.stupidSort"),
+                new Tester(new Sort.Insertion(),"Yulia.insertionSort")
         };
 
         System.out.println("Введите длину массива");
