@@ -23,7 +23,7 @@
           <columns value="10"/>
           <horizontalAlignment value="11"/>
           <text value=""/>
-          <toolTipText value="input lenght"/>
+          <toolTipText value="Введите длину списка"/>
         </properties>
       </component>
       <component id="6fd42" class="javax.swing.JLabel" binding="infoLabel">

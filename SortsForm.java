@@ -42,7 +42,7 @@ public class SortsForm {
             System.out.println(alg.name);
             infoLabelText = alg.name;
             alg.sort(toSort);
-            result = result + alg.name + ":  " + String.valueOf(alg.time) + "\n";
+            result = result + "Время работы " + alg.name + ":  " + String.valueOf(alg.time) + " с" + "\n";
             barValue += 100/(algs.length);
         }
     }
@@ -90,13 +90,13 @@ public class SortsForm {
                                 } else { // you put a negative number
                                     infoLabelText = "Error";
                                     barValue = 100;
-                                    result = "Error";
+                                    result = "Длина списка должна быть натуральным числом.";
 
                                 }
                             } catch (Exception ex) { // yuo put not integer
                                 infoLabelText = "Error";
                                 barValue = 100;
-                                result = "Error";
+                                result = "Длина списка должна быть натуральным числом.";
                             }
                             Thread.sleep(1);
                             JOptionPane.showMessageDialog(null, result, "Result",
