@@ -29,7 +29,7 @@
       <component id="6fd42" class="javax.swing.JLabel" binding="infoLabel">
         <constraints/>
         <properties>
-          <text value=""/>
+          <text value="Введите длину списка и нажмите кнопку start"/>
         </properties>
       </component>
     </children>

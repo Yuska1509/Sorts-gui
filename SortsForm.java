@@ -18,6 +18,7 @@ public class SortsForm {
     Integer barValue = 0;
     String infoLabelText = "";
     String result = "";
+    Integer listLenght = 0;
 
     /**
      * testing sorts
@@ -80,12 +81,12 @@ public class SortsForm {
                         while (barValue < 100) {
                             try { // if you put an integer
                                 if (Integer.parseInt(mainTextField.getText()) > 0) {
-                                    Integer length = Integer.parseInt(mainTextField.getText());
+                                    listLenght = Integer.parseInt(mainTextField.getText());
                                     Integer range = 10000;
                                     System.out.println("Creating array");
                                     infoLabel.setText("Creating array");
                                     infoLabelText = "Creating array";
-                                    int[] list = InputPrint.getRandomArray(length, range);
+                                    int[] list = InputPrint.getRandomArray(listLenght, range);
                                     maintestspeed(list);
                                 } else { // you put a negative number
                                     infoLabelText = "Error";
@@ -99,7 +100,7 @@ public class SortsForm {
                                 result = "Длина списка должна быть натуральным числом.";
                             }
                             Thread.sleep(1);
-                            JOptionPane.showMessageDialog(null, result, "Result",
+                            JOptionPane.showMessageDialog(null, result, "Результат для массива длины " + listLenght,
                                     JOptionPane.INFORMATION_MESSAGE);
                         }
                     }  catch(InterruptedException v) {
